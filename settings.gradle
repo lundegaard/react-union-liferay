@@ -1,0 +1,4 @@
+rootProject.name = 'react-union-liferay'
+
+include 'react-union-support'
+include 'react-union-taglib'

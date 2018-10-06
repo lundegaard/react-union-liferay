@@ -5,6 +5,10 @@
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
         version="2.1">
 
+    <description>
+        JSP tag library containing tags which render the React widget.
+        Purpose is to remove the need of boilerplate code which consists of a script tag and a container element.
+    </description>
     <tlib-version>1.0</tlib-version>
     <short-name>react-union</short-name>
     <uri>http://lundegaard.eu/tld/react-union</uri>

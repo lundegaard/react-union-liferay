@@ -6,10 +6,10 @@ Init data attribute can be set by initDataAttr.
              description="widget's name" %>
 <%@attribute name="unionContainer" required="false" type="java.lang.String"
              description="id of div element that is used as the widget's container" %>
-<%@attribute name="initData" required="false" type="java.lang.Object"
-             description="name of request attribute with init data" %>
 <%@attribute name="initDataAttr" required="false" type="java.lang.String"
-             description="widget's init data. It has preference before initDataAttr" %>
+             description="widget's init data" %>
+<%@attribute name="initData" required="false" type="java.lang.Object"
+             description="name of request attribute with init data. It has preference before initDataAttr." %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>

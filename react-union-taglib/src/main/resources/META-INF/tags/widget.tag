@@ -1,8 +1,8 @@
 <%--
-Renders widget's snippet with init data stored in request attribute 'reactWidgetInitData_${unionWidget}'.
+Renders widget's snippet with init data stored in request attribute 'reactWidgetInitData_${name}'.
 Init data attribute can be set by initDataAttr.
 --%>
-<%@attribute name="unionWidget" required="true" type="java.lang.String"
+<%@attribute name="name" required="true" type="java.lang.String"
              description="widget's name" %>
 <%@attribute name="unionContainer" required="false" type="java.lang.String"
              description="id of div element that is used as the widget's container" %>
@@ -17,13 +17,13 @@ Init data attribute can be set by initDataAttr.
 <c:set var="ns"><portlet:namespace/></c:set>
 
 <%-- Determine final container name --%>
-<c:set var="finalUnionContainer" value="${ns}${unionWidget}" />
+<c:set var="finalUnionContainer" value="${ns}${name}" />
 <c:if test="${unionContainer != null}">
     <c:set var="finalUnionContainer" value="${unionContainer}" />
 </c:if>
 
 <%-- Determine final init data --%>
-<c:set var="defaultInitDataAttr" value="reactWidgetInitData_${unionWidget}" />
+<c:set var="defaultInitDataAttr" value="reactWidgetInitData_${name}" />
 <c:set var="defaultInitData" value="${requestScope[defaultInitDataAttr]}" />
 
 <c:set var="finalInitData" value="" />
@@ -39,6 +39,6 @@ Init data attribute can be set by initDataAttr.
 
 <%-- Render widget's snippet --%>
 <div id="${finalUnionContainer}"></div>
-<script data-union-widget="${unionWidget}" data-union-container="${finalUnionContainer}" type="application/json">
+<script data-union-widget="${name}" data-union-container="${finalUnionContainer}" type="application/json">
     ${finalInitData}
 </script>

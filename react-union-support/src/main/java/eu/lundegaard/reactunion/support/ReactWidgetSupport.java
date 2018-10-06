@@ -53,7 +53,7 @@ public abstract class ReactWidgetSupport implements ReactWidgetAware {
     public static final String UNKNOWN_WIDGET = "unknownWidget";
 
     /**
-     * Sets widget's init data to the request attribute 'reactWidgetInitData_${unionWidget}'.
+     * Sets widget's init data to the request attribute 'reactWidgetInitData_${name}'.
      *
      * @param request portlet render request
      */

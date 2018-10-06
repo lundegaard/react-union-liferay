@@ -28,7 +28,7 @@ JSP tag library containing tags which render the React widget. Purpose is to rem
 The simplest usage is just to write the `widget` tag and specify the widget name, e. g. _content_. 
 
 ```jsp
-<react-union:widget unionWidget="content" />
+<react-union:widget name="content" />
 ```
 
 It renders react widget _content_ to the `<div>` element with the `${ns}content` _id_, creates `<script>` tag and inserts initial data from the `reactWidgetInitData_${NAME}`, e.g. `reactWidgetInitData_content`. This is equivalent to:
@@ -45,7 +45,7 @@ It renders react widget _content_ to the `<div>` element with the `${ns}content`
 You can specify custom init data directly in JSP by `initData` attribute.
 
 ```jsp
-<react-union:widget unionWidget="content" initData='{
+<react-union:widget name="content" initData='{
 	"textation": {
 		"heading": "Init data heading",
 		"content": "Init data content"
@@ -59,7 +59,7 @@ You can specify custom init data attribute which contains the data. The data are
 
 *JSP:*
 ```jsp
-<react-union:widget unionWidget="content" initDataAttr="customInitData" />
+<react-union:widget name="content" initDataAttr="customInitData" />
 ```
 
 *Portlet controller:*

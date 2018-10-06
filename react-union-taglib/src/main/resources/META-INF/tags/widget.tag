@@ -23,7 +23,7 @@ Init data attribute can be set by initDataAttr.
 </c:if>
 
 <%-- Determine final init data --%>
-<c:set var="defaultInitDataAttr" value="${'reactWidgetInitData_'}${unionWidget}" />
+<c:set var="defaultInitDataAttr" value="reactWidgetInitData_${unionWidget}" />
 <c:set var="defaultInitData" value="${requestScope[defaultInitDataAttr]}" />
 
 <c:set var="finalInitData" value="" />

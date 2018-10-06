@@ -12,14 +12,22 @@ import org.slf4j.LoggerFactory;
 import eu.lundegaard.reactunion.support.exception.ReactSupportException;
 
 /**
+ * Serves to map data between Java and React.
+ *
  * @author Roman Srom (roman.srom@lundegaard.eu)
  */
 public class ReactDataMapper {
 
     private static final Logger LOG = LoggerFactory.getLogger(ReactDataMapper.class);
 
+    /**
+     * Returns JSON representation of the object. It uses Jackson library to create JSON format.
+     *
+     * @param object
+     * @return
+     */
     public String getJson(Object object) {
-        ObjectMapper objectMapper = getObjectMapper();
+        ObjectMapper objectMapper = ObjectMapperFactory.getInstance();
         try {
             final String json = objectMapper.writeValueAsString(object);
             LOG.debug("Serialized object {} to json {}", object, json);
@@ -27,9 +35,5 @@ public class ReactDataMapper {
         } catch (JsonProcessingException e) {
             throw new ReactSupportException("Serialization to json error", e);
         }
-    }
-
-    protected ObjectMapper getObjectMapper() {
-        return ObjectMapperFactory.createObjectMapper();
     }
 }

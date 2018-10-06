@@ -11,9 +11,17 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 public class ObjectMapperFactory {
 
-    public static ObjectMapper createObjectMapper() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper;
+    private static ObjectMapper instance;
+
+    public static ObjectMapper getInstance() {
+        if (instance == null) {
+            synchronized (ObjectMapperFactory.class) {
+                if (instance == null) {
+                    instance = new ObjectMapper();
+                }
+            }
+        }
+        return instance;
     }
 
 }

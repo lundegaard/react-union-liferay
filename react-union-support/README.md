@@ -13,6 +13,9 @@ Java library for supporting the work with react union.
 *ReactWidgetSupport:*
 
 In your portlet application create own class (e. g. `HeroReactWidgetSupport`) that extends `ReactWidgetSupport`. Specify _widget name_ and _initial data_.
+`InitData` and `Textation` are POJO objects. Object returned from `getWidgetInitData(request)` method is
+serialized by Jackson and therefore Jackson annotations could influence the result (e.g. skipping some fields,
+formatting date fields).
 
 ```java
 @Component(

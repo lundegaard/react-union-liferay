@@ -20,6 +20,11 @@ import static eu.lundegaard.reactunion.support.ReactUnionConstants.*;
  * You must either override {@link #getWidgetsInitData(RenderRequest)} or
  * ({@link #getWidgetInitData(RenderRequest)} and {@link #getWidgetName()}).
  *
+ * If you render only one widget in your portlet it is preferable to implement
+ * ({@link #getWidgetInitData(RenderRequest)} and {@link #getWidgetName()}).
+ * If you render multiple widgets in your portlet then implement {@link #getWidgetsInitData(RenderRequest)} method.
+ * You should return Map with widget names as keys and widget init data as values.
+ *
  * @author Roman Srom (roman.srom@lundegaard.eu)
  */
 public abstract class ReactWidgetSupport implements ReactWidgetAware {
@@ -45,6 +50,13 @@ public abstract class ReactWidgetSupport implements ReactWidgetAware {
         }
     }
 
+    /**
+     * Returns Map with widget names as keys and widget init data as values. The default implementation calls
+     * ({@link #getWidgetInitData(RenderRequest)} and {@link #getWidgetName()}) to create the map with one entry.
+     *
+     * @param request portlet request
+     * @return Map with widget names as keys and widget init data as values
+     */
     @Override
     public Map<String, Object> getWidgetsInitData(RenderRequest request) {
         Map<String, Object> widgetsInitData = new HashMap<>();
@@ -53,11 +65,22 @@ public abstract class ReactWidgetSupport implements ReactWidgetAware {
         return widgetsInitData;
     }
 
+    /**
+     * Returns widget's init data.
+     *
+     * @param request portlet request
+     * @return widget's init data
+     */
     @Override
     public Object getWidgetInitData(RenderRequest request) {
         return null;
     }
 
+    /**
+     * Returns widget's name.
+     *
+     * @return widget's name
+     */
     @Override
     public String getWidgetName() {
         return UNKNOWN_WIDGET;

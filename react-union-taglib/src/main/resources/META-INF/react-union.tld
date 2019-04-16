@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+
+    <description>
+        JSP tag library containing tags which render the React widget.
+        Purpose is to remove the need of boilerplate code which consists of a script tag and a container element.
+    </description>
+    <tlib-version>1.0</tlib-version>
+    <short-name>react-union</short-name>
+    <uri>http://lundegaard.eu/tld/react-union</uri>
+
+    <tag-file>
+        <description>Renders widget's snippet</description>
+        <name>widget</name>
+        <path>/META-INF/tags/widget.tag</path>
+    </tag-file>
+</taglib>
